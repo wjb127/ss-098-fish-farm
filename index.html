@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>물결</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">물결</div>
+      <div class="stat gold" id="money">동전 0</div>
+      <div class="stat" id="food">밥 0</div>
+      <div class="grow"></div>
+      <div class="stat" id="cap">0/0</div>
+      <button class="iconbtn" type="button" id="setBtn" title="설정">⚙</button>
+    </header>
+    <div id="quest">첫 동전을 줍세요</div>
+    <div id="tankWrap">
+      <canvas id="tank"></canvas>
+      <div id="card"></div>
+      <div id="toast"></div>
+      <div id="hint"></div>
+    </div>
+    <div id="dock">
+      <button class="pri" type="button" id="feedBtn">밥 주기</button>
+      <button type="button" id="cleanBtn">청소</button>
+      <button type="button" id="shopBtn">상점</button>
+      <button type="button" id="questBtn">미션</button>
+    </div>
+  </div>
+
+  <div class="modal" id="shop">
+    <div class="panel">
+      <div class="head">
+        <div class="tabs" id="tabs">
+          <button type="button" class="on" data-tab="fish">물고기</button>
+          <button type="button" data-tab="up">업그레이드</button>
+          <button type="button" data-tab="item">아이템</button>
+          <button type="button" data-tab="deco">장식</button>
+          <button type="button" data-tab="quest">미션</button>
+          <button type="button" data-tab="book">도감</button>
+        </div>
+        <button class="close" type="button" id="shopClose">닫기</button>
+      </div>
+      <div class="grid" id="shopGrid"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="settings">
+    <div class="panel slim">
+      <div class="head">
+        <strong>설정</strong>
+        <button class="close" type="button" id="setClose">닫기</button>
+      </div>
+      <div class="setrow">
+        <span>소리</span>
+        <button type="button" id="muteBtn">켜짐</button>
+      </div>
+      <div class="setrow">
+        <span>지금까지</span>
+        <span class="mut" id="statsLine">—</span>
+      </div>
+      <button class="danger" type="button" id="resetBtn">수조 비우고 처음부터</button>
+    </div>
+  </div>
+
+  <div class="modal" id="offline">
+    <div class="panel slim">
+      <h2>자리 비운 동안</h2>
+      <p id="offlineMsg"></p>
+      <button class="pri wide" type="button" id="offlineOk">받기</button>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
